@@ -2,12 +2,9 @@
   -set active_tab = {request.path: 'active'}
   %li(class="#{active_tab.get(uri_for('home'), '')}")
     %a(href="#{uri_for('home')}") Summary
-
   %li(class="#{active_tab.get(uri_for('bus_route.list'), '')}")
     %a(href="#{uri_for('bus_route.list')}") Bus Routes
-
   %li(class="#{active_tab.get(uri_for('bus.list'), '')}")
     %a(href="#{uri_for('bus.list')}") Buses
-    
   %li(class="#{active_tab.get(uri_for('bus_driver.list'), '')}")
     %a(href="#{uri_for('bus_driver.list')}") Bus Drivers

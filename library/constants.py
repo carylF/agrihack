@@ -1,6 +1,6 @@
-PUBLIC_DOMAIN = 'transapptool@appspot.com'
+PUBLIC_DOMAIN = 'agrihack@appspot.com'
 PUBLIC_HOST = 'http://www.%s' % PUBLIC_DOMAIN
-PRODUCT_NAME = 'TransApp'
+PRODUCT_NAME = 'AgriHack'
 CONTACT_EMAIL = 'contact@%s' % PUBLIC_DOMAIN
 SUPPORT_EMAIL = 'support@%s' % PUBLIC_DOMAIN
 NO_REPLY_EMAIL = 'noreply@%s' % PUBLIC_DOMAIN

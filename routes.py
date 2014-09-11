@@ -5,7 +5,7 @@ from handlers.login import LoginHandler
 from handlers.profile import ProfileHandler
 from handlers.signup import SignupHandler
 from handlers.static import PublicStaticHandler
-from handlers.search_routes import SearchRoutesHandler
+from handlers.search_times import SearchTimesHandler
 from handlers.contact import ContactHandler
 # from handlers.bus import BusHandler
 # from handlers.bus_route import BusRouteHandler
@@ -22,7 +22,7 @@ _route_info = [
     ('contact', None, '/contact/', ContactHandler, 'contact'),
     ('home', 'GET', '/', HomeHandler, 'home'),
     ('signup', None, '/signup/', SignupHandler, 'signup'),
-    ('search',None, '/search/' ,SearchRoutesHandler, 'search'),
+    ('search',None, '/search/' ,SearchTimesHandler, 'search'),
 
     # Authentication-related handlers.
     ('login', None, '/login/', LoginHandler, 'login'),
