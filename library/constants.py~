@@ -1,0 +1,7 @@
+PUBLIC_DOMAIN = 'corevalue.appspot.com'
+PERSONAL_EMAIL= 'fordsp876@hotmail.com'
+PUBLIC_HOST = 'http://www.%s' % PUBLIC_DOMAIN
+CONTACT_EMAIL = 'contact@%s' % PERSONAL_EMAIL
+SUPPORT_EMAIL = 'support@%s' % PUBLIC_EMAIL
+NO_REPLY_EMAIL = 'noreply@%s' % PUBLIC_DOMAIN
+

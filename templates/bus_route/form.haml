@@ -1,0 +1,19 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Bus route"
+
+-import "form_macros.haml" as form_macros
+
+-block content:
+  .container
+    %p.lead
+      %a(href="#{uri_for('bus_route.list')}") BusRoute
+      &raquo;
+      -if 'update' in request.url
+        Update bus route
+      -elif 'create' in request.url
+        Create bus route
+
+    %form.form-horizontal(action=".", method="POST")
+      #{form_macros.form_fields(form)}
+      #{form_macros.submit_button()}

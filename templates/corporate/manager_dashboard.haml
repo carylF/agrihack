@@ -1,0 +1,35 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Manager Dashboard"
+
+-block content
+  %p.lead Summary
+  %table.table.table-bordered
+    %thead
+      %th
+        %i.icon-user
+        Employee
+      %th
+        Driver ID
+      %th
+        Assigned bus ID
+      %th
+        Route number
+      %th
+        Arrival time
+      %th 
+        Departure time
+    %tbody
+      -for bus_driver in current_account.get_BusDriver()
+        %tr
+          %td
+            %a(href="") #{bus_driver.name}
+          %td
+            %a(href="") #{bus_driver.driver_id}
+          %td
+            %a(href="") 0
+          %td
+            %a(href="") 0
+      -else
+        %tr: %td(colspan="4")
+          No Employees

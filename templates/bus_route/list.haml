@@ -1,0 +1,34 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Bus Routes"
+
+-block content
+  -include "modals/bus_route_create.haml"
+  %button.pull-right.btn.btn-success.btn-large(role="button", \
+    data-modal="modal")
+    %i.icon-plus
+    Create new route
+
+  %p.lead Bus Routes
+
+  %table.table.table-striped.table-hover.table-bordered
+    %thead: %tr
+      %th Route numbers
+      %th Stops
+      %th
+    %tbody
+      -for busRoute in current_account.get_BusRoutes()
+        %tr
+          %td #{busRoute.route_number}
+          %td #{busRoute.stops}
+          %td
+            %a.btn(href="#{uri_for('bus_route.update', id=busRoute.key().id())}")
+              %i.icon-edit
+              Update route
+            %a.btn.btn-danger(href="#{uri_for('bus_route.delete', id=busRoute.key().id())}")
+              %i.icon-trash
+              Delete route
+      -else
+        %tr
+          %td(colspan="3")
+            No Routes have been added added yet.

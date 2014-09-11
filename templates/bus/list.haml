@@ -1,0 +1,46 @@
+-extends "corporate/private_base.haml"
+
+-set title = "Bus"
+
+-block content
+  -include "modals/bus_create.haml"
+  %button.pull-right.btn.btn-success.btn-large(role="button", \
+    data-modal="modal")
+    %i.icon-plus
+    Add new bus
+
+  %p.lead Bus
+
+  %table.table.table-striped.table-hover.table-bordered
+    %thead: %tr
+      %th Bus ID
+      %th Bus type
+      %th Bus status
+      %th Departure Time
+      %th Arrival Time
+      %th
+    %tbody
+      -for bus in current_account.get_Bus()
+        %tr
+          %td #{bus.bus_id}
+          %td #{bus.is_premium}
+          %td #{bus.is_operational}
+          %td #{bus.departure_time}
+          %td #{bus.arrival_time}
+          %td
+            %a.btn(href="#{uri_for('bus.update_times', id=bus.key().id())}")
+              %i.icon-edit
+              Update times
+            %a.btn(href="#{uri_for('bus.assign_driver', id=bus.key().id())}")
+              %i.icon-edit
+              Assign driver
+            %a.btn(href="#{uri_for('bus.update', id=bus.key().id())}")
+              %i.icon-edit
+              Update bus
+            %a.btn.btn-danger(href="#{uri_for('bus.delete', id=bus.key().id())}")
+              %i.icon-trash
+              Delete bus
+      -else
+        %tr
+          %td(colspan="3")
+            No Routes have been added added yet.
